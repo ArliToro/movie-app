@@ -33,52 +33,52 @@ class Movie extends React.Component {
                 ) : (
                     <div className={'movie-container-page'}>
                         <div className={"cover-container"}>
-                            <img src={this.state.movie.image.original}/>
+                            <img src={this.state.movie.image.original ? this.state.movie.image.original : ""}/>
                         </div>
                         <div key={this.state.movie.id} className={'movie-container'}>
-                            <h1>{this.state.movie.name}</h1>
+                            <h1>{this.state.movie.name ? this.state.movie.name : ""}</h1>
                             <div className={"movie-all-info"}>
                                 <div>
                                     <div>
                                         <h4>Language</h4>
                                         <img src={language} alt="" className={"icon"}/>
                                     </div>
-                                    <h3>{this.state.movie.language}</h3>
+                                    <h3>{this.state.movie.language ? this.state.movie.language : ""}</h3>
                                 </div>
                                 <div>
                                     <div>
                                         <h4>Type</h4>
                                         <img src={camera} alt="" className={"icon"}/>
                                     </div>
-                                    <h3>{this.state.movie.type}</h3>
+                                    <h3>{this.state.movie.type ? this.state.movie.type : ""}</h3>
                                 </div>
                                 <div>
                                     <div>
                                         <h4>Status</h4>
                                         <img src={loading} alt="" className={"icon"}/>
                                     </div>
-                                    <h3>{this.state.movie.status}</h3>
+                                    <h3>{this.state.movie.status ? this.state.movie.status : ""}</h3>
                                 </div>
                                 <div>
                                     <div>
                                         <h4>Official Site</h4>
                                         <img src={website} className={"icon"}/>
                                     </div>
-                                    <a href={this.state.movie.officialSite} target="_blank">Website</a>
+                                    <a href={this.state.movie.officialSite ? this.state.movie.officialSite : ""} target="_blank">Website</a>
                                 </div>
                                 <div>
                                     <div>
                                         <h4>Network</h4>
                                         <img src={video} className={"icon"}/>
                                     </div>
-                                    <h3>{this.state.movie.network.name}</h3>
+                                    <h3>{this.state.movie.network ? this.state.movie.network.name : ""}</h3>
                                 </div>
                                 <div>
                                     <div>
                                         <h4>Country</h4>
                                         <img src={placeholder} className={"icon"}/>
                                     </div>
-                                    <h3>{this.state.movie.network.country.code}</h3>
+                                    <h3>{this.state.movie.network ? this.state.movie.network.country.code : ""}</h3>
                                 </div>
                             </div>
                             <h2 className={"summary-text"}>{this.cleanText()}</h2>

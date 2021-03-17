@@ -82,7 +82,7 @@ class Data extends React.Component {
                             <div className={"movies-container"}>
                                 {moviesArray.map((movie) => (
                                     <div key={movie.id} className={"movies-items"}>
-                                        <img src={movie.show.image !== null ? movie.show.image.medium : ""} alt=""/>
+                                        <img src={movie.show.image ? movie.show.image.medium : ""} alt=""/>
                                         <div className={'movie-details'}
                                              style={{marginTop: (this.state.actualMovieItem === movie.id && this.state.addTo ? "-57%" : "57%")}}>
                                             <div className={"movie-title"} title={movie.show.name}>
@@ -101,11 +101,11 @@ class Data extends React.Component {
                                                 </div>
                                                 <div>
                                                     <h4 className={"text-ellipses"}
-                                                        title={movie.show.network.name}>{movie.show.network.name}</h4>
+                                                        title={movie.show.network ? movie.show.network.name: ""}>{movie.show.network ? movie.show.network.name: ""}</h4>
                                                     <h5>Network</h5>
                                                 </div>
                                                 <div>
-                                                    <h4>{movie.show.network.country.code}</h4>
+                                                    <h4>{movie.show.network ? movie.show.network.country.code: "" }</h4>
                                                     <h5>Country</h5>
                                                 </div>
                                                 <div>
